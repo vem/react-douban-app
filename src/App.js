@@ -1,11 +1,12 @@
 import './App.css';
-import TabBar from './components/tabbar';
+import { Routes, Route } from "react-router-dom";
+import Home from './views/Home'
 
 function App() {
   return (
-    <div className="App">
-      <TabBar />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
   );
 }
 
