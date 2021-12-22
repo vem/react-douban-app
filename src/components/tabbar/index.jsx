@@ -9,7 +9,7 @@ import {
 const fn = () => {
     return (
         <>
-            <div className="fixed bottom-0 w-full h-20 bg-gray-800 text-gray-400 flex justify-between items-center px-8">
+            <div className="fixed z-20 bottom-0 w-full h-20 bg-gray-800 text-gray-400 flex justify-between items-center px-8">
                 <div className="flex flex-col items-center">
                     <HomeFilled style={{ fontSize: '20px' }} />
                     首页

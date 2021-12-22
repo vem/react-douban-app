@@ -4,7 +4,7 @@ import { Badge } from 'antd';
 const fn = () => {
     return (
         <>
-            <div className="fixed w-full h-12 bg-gray-800 text-gray-400 flex justify-between items-center px-4">
+            <div className="fixed z-20 w-full h-12 bg-gray-800 text-gray-400 flex justify-between items-center px-4">
                 <MenuOutlined style={{ fontSize: '20px' }} />
                 <input
                     type="text"
