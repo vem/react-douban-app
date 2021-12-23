@@ -1,16 +1,30 @@
 import {
-    MoreOutlined,
+    EllipsisOutlined,
     UserOutlined,
-    StarFilled,
-    StarOutlined,
     LikeOutlined,
     CommentOutlined,
     RetweetOutlined,
     CheckCircleOutlined,
 } from '@ant-design/icons';
-import { Avatar, Button, Image } from 'antd';
+import { Avatar, Button, Image, Rate } from 'antd';
+import _ from 'lodash';
+import './style.scss';
 
 const fn = (props) => {
+    const movieNames = [
+        '肖申克的救赎',
+        '霸王别姬',
+        '这个杀手不太冷',
+        '阿甘正传',
+        '美丽人生',
+        '泰坦尼克号',
+        '千与千寻',
+        '阿凡达',
+        '罗马假日',
+        '楚门的世界',
+        '盗梦空间',
+    ];
+
     return (
         <>
             <div className="w-full flex justify-between items-start px-4 pt-4">
@@ -29,42 +43,46 @@ const fn = (props) => {
                 </div>
                 <div className="flex flex-nowarp items-center text-gray-600">
                     <div>12-08</div>
-                    <MoreOutlined
-                        rotate="90"
+                    <EllipsisOutlined
                         className="ml-2"
                         style={{ fontSize: '20px' }}
                     />
                 </div>
             </div>
-            <div className="px-4 mt-2">
-                <StarFilled />
-                <StarFilled />
-                <StarFilled />
-                <StarFilled />
-                <StarOutlined />
-            </div>
+            <Rate
+                className="px-4 mt-2"
+                disabled
+                defaultValue={_.random(1, 5)}
+                style={{ fontSize: '15px' }}
+            />
             <div className="bg-gray-700 mx-4 my-2 p-2 rounded-md flex relative overflow-hidden">
-                <div>
-                    <Image
-                        src="https://picsum.photos/80/110?random=1"
-                        width={80}
-                        height={110}
-                        className="rounded-md"
-                    />
-                </div>
+                <Image
+                    src={`https://picsum.photos/80/110?random=${_.random(
+                        1,
+                        9
+                    )}`}
+                    width={80}
+                    height={110}
+                    className="rounded-md"
+                />
                 <div className="ml-2 z-10">
                     <div className="text-white text-xl font-bold">
-                        movie name
+                        {movieNames[_.random(0, movieNames.length - 1)]}
                     </div>
                     <div>
-                        <StarFilled style={{ color: 'yellow' }} />
-                        <StarFilled style={{ color: 'yellow' }} />
-                        <StarFilled style={{ color: 'yellow' }} />
-                        <StarFilled style={{ color: 'yellow' }} />
-                        <StarOutlined style={{ color: 'yellow' }} />
-                        <div className="text-yellow-400 inline ml-1">8.3</div>
+                        <Rate
+                            disabled
+                            defaultValue={_.random(1, 5)}
+                            style={{ fontSize: '15px' }}
+                        />
+                        <div className="text-yellow-400 inline ml-1">
+                            {_.random(0.1, 9.9).toFixed(1)}
+                        </div>
                     </div>
-                    <div>2011 / 美国 / 剧情 传记 历史 / 斯皮尔伯格 ...</div>
+                    <div>
+                        {_.random(1950, 2022)} / 美国 / 剧情 传记 历史 /
+                        斯皮尔伯格 ...
+                    </div>
                 </div>
                 <CheckCircleOutlined
                     className="absolute right-0 text-gray-600"
