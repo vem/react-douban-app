@@ -10,7 +10,7 @@ import { Avatar, Button } from 'antd';
 import { Image } from 'antd-mobile';
 import _ from 'lodash';
 
-const fn = (props) => {
+const Fn = (props) => {
     const imageNumber = _.random(1, 9);
     const imageArray = () => {
         const array = [];
@@ -91,4 +91,4 @@ const fn = (props) => {
     );
 };
 
-export default fn;
+export default Fn;

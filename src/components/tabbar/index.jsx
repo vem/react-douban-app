@@ -8,7 +8,7 @@ import {
 
 const iconSize = '20px';
 
-const fn = () => {
+const Fn = () => {
     return (
         <>
             <div className="fixed z-20 bottom-0 w-full h-20 bg-gray-800 text-gray-400 flex justify-between items-center px-8 pb-5 text-xs">
@@ -38,4 +38,4 @@ const fn = () => {
     );
 };
 
-export default fn;
+export default Fn;

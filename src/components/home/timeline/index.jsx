@@ -11,7 +11,7 @@ import { Image } from 'antd-mobile';
 import _ from 'lodash';
 import './style.scss';
 
-const fn = (props) => {
+const Fn = (props) => {
     const movieNames = [
         '肖申克的救赎',
         '霸王别姬',
@@ -121,4 +121,4 @@ const fn = (props) => {
     );
 };
 
-export default fn;
+export default Fn;
