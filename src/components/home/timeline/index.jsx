@@ -6,7 +6,8 @@ import {
     RetweetOutlined,
     CheckCircleOutlined,
 } from '@ant-design/icons';
-import { Avatar, Button, Image, Rate } from 'antd';
+import { Avatar, Button, Rate } from 'antd';
+import { Image } from 'antd-mobile';
 import _ from 'lodash';
 import './style.scss';
 

@@ -7,6 +7,7 @@ import TabBar from '../../components/tabbar';
 import HomeTimeLine from '../../components/home/timeline';
 import HomeRecommend from '../../components/home/recommend';
 import { Tabs } from 'antd';
+
 const { TabPane } = Tabs;
 
 const fn = () => {

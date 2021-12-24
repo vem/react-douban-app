@@ -6,7 +6,8 @@ import {
     RetweetOutlined,
     BulbOutlined,
 } from '@ant-design/icons';
-import { Avatar, Button, Image } from 'antd';
+import { Avatar, Button } from 'antd';
+import { Image } from 'antd-mobile';
 import _ from 'lodash';
 
 const fn = (props) => {
@@ -16,7 +17,10 @@ const fn = (props) => {
         for (let i = 0; i < imageNumber; i++)
             array.push(
                 <Image
-                    src={`https://picsum.photos/200?random=${_.random(1, 1000)}`}
+                    src={`https://picsum.photos/200?random=${_.random(
+                        1,
+                        1000
+                    )}`}
                     key={i}
                 />
             );
@@ -36,12 +40,10 @@ const fn = (props) => {
                         {props.nickname}
                     </div>
                 </div>
-                <div className="text-gray-600">
-                    <EllipsisOutlined
-                        className="ml-2"
-                        style={{ fontSize: '20px' }}
-                    />
-                </div>
+                <EllipsisOutlined
+                    className="ml-2 text-gray-600"
+                    style={{ fontSize: '20px' }}
+                />
             </div>
 
             <div className="px-4">
@@ -53,7 +55,9 @@ const fn = (props) => {
                     年度目标 "观影数量3600" 提前大成! 年度目标 "观影数量3600"
                     提前大成! 年度目标 "观影数量3600" 提前大成!
                 </div>
-                <div className="mt-2 grid grid-cols-3 gap-2">{imageArray()}</div>
+                <div className="mt-2 grid grid-cols-3 gap-2">
+                    {imageArray()}
+                </div>
             </div>
 
             <div className="flex justify-between px-10 py-2">

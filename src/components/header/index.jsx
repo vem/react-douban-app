@@ -1,5 +1,5 @@
 import { MenuOutlined, MailOutlined } from '@ant-design/icons';
-import { Badge } from 'antd';
+import { Badge } from 'antd-mobile';
 
 const fn = () => {
     return (
@@ -11,7 +11,7 @@ const fn = () => {
                     className="rounded-lg h-8 w-4/5 bg-gray-600 text-center text-base"
                     placeholder="宇宙"
                 />
-                <Badge count={5} size="small">
+                <Badge content="3">
                     <MailOutlined
                         style={{ fontSize: '20px' }}
                         className="text-gray-400"
