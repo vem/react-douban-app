@@ -8,11 +8,16 @@ import { BsBook, BsBookFill } from 'react-icons/bs';
 import { TiGroupOutline, TiGroup } from 'react-icons/ti';
 import { RiUser3Fill, RiUser3Line } from 'react-icons/ri';
 import { TabBar } from 'antd-mobile';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Fn = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const { pathname } = location;
+
     const tabs = [
         {
-            key: 'home',
+            key: '/',
             title: '首页',
             icon: (active) => (active ? <AiFillHome /> : <AiOutlineHome />),
         },
@@ -32,7 +37,7 @@ const Fn = () => {
             icon: (active) => (active ? <AiFillShop /> : <AiOutlineShop />),
         },
         {
-            key: 'personalCenter',
+            key: '/mine',
             title: '我',
             icon: (active) => (active ? <RiUser3Fill /> : <RiUser3Line />),
         },
@@ -40,7 +45,11 @@ const Fn = () => {
 
     return (
         <>
-            <TabBar className="fixed z-20 bottom-0 w-full h-20 bg-gray-800 text-gray-400 pb-6">
+            <TabBar
+                className="fixed z-20 bottom-0 w-full h-20 bg-gray-800 text-gray-400 pb-6"
+                onChange={(path) => navigate(path)}
+                activeKey={pathname}
+            >
                 {tabs.map((item) => (
                     <TabBar.Item
                         key={item.key}

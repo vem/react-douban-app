@@ -10,7 +10,7 @@ import { Tabs } from 'antd';
 
 const { TabPane } = Tabs;
 
-const fn = () => {
+const Fn = () => {
     return (
         <>
             <Header />
@@ -98,4 +98,4 @@ const fn = () => {
     );
 };
 
-export default fn;
+export default Fn;
