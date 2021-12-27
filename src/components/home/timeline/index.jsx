@@ -1,11 +1,11 @@
 import {
-    EllipsisOutlined,
-    UserOutlined,
-    LikeOutlined,
-    CommentOutlined,
-    RetweetOutlined,
-    CheckCircleOutlined,
-} from '@ant-design/icons';
+    AiOutlineEllipsis,
+    AiOutlineComment,
+    AiOutlineRetweet,
+    AiOutlineCheckCircle,
+    AiOutlineUser,
+    AiOutlineLike,
+} from 'react-icons/ai';
 import { Avatar, Button, Rate } from 'antd';
 import { Image } from 'antd-mobile';
 import _ from 'lodash';
@@ -31,8 +31,9 @@ const Fn = (props) => {
             <div className="w-full flex justify-between items-start px-4 pt-4">
                 <div className="flex">
                     <Avatar
-                        icon={<UserOutlined />}
+                        icon={<AiOutlineUser className="mx-auto" />}
                         src={props.avatar}
+                        className="flex items-center"
                         size={45}
                     />
                     <div className="ml-2">
@@ -44,7 +45,7 @@ const Fn = (props) => {
                 </div>
                 <div className="flex flex-nowarp items-center text-gray-600">
                     <div>12-08</div>
-                    <EllipsisOutlined
+                    <AiOutlineEllipsis
                         className="ml-2"
                         style={{ fontSize: '20px' }}
                     />
@@ -85,7 +86,7 @@ const Fn = (props) => {
                         斯皮尔伯格 ...
                     </div>
                 </div>
-                <CheckCircleOutlined
+                <AiOutlineCheckCircle
                     className="absolute right-0 text-gray-600"
                     style={{ fontSize: '150px' }}
                 />
@@ -94,24 +95,24 @@ const Fn = (props) => {
                 <Button
                     type="text"
                     size="large"
-                    icon={<LikeOutlined style={{ fontSize: '18px' }} />}
-                    className="text-gray-600"
+                    icon={<AiOutlineLike style={{ fontSize: '18px' }} />}
+                    className="text-gray-600 flex items-center gap-x-1"
                 >
                     赞
                 </Button>
                 <Button
                     type="text"
                     size="large"
-                    icon={<CommentOutlined style={{ fontSize: '18px' }} />}
-                    className="text-gray-600"
+                    icon={<AiOutlineComment style={{ fontSize: '18px' }} />}
+                    className="text-gray-600 flex items-center gap-x-1"
                 >
                     回复
                 </Button>
                 <Button
                     type="text"
                     size="large"
-                    icon={<RetweetOutlined style={{ fontSize: '18px' }} />}
-                    className="text-gray-600"
+                    icon={<AiOutlineRetweet style={{ fontSize: '18px' }} />}
+                    className="text-gray-600 flex items-center gap-x-1"
                 >
                     转发
                 </Button>

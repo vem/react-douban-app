@@ -1,11 +1,11 @@
 import {
-    EllipsisOutlined,
-    UserOutlined,
-    LikeOutlined,
-    CommentOutlined,
-    RetweetOutlined,
-    BulbOutlined,
-} from '@ant-design/icons';
+    AiOutlineEllipsis,
+    AiOutlineComment,
+    AiOutlineRetweet,
+    AiOutlineUser,
+    AiOutlineLike,
+} from 'react-icons/ai';
+import { HiOutlineHashtag } from 'react-icons/hi';
 import { Avatar, Button } from 'antd';
 import { Image } from 'antd-mobile';
 import _ from 'lodash';
@@ -32,24 +32,26 @@ const Fn = (props) => {
             <div className="w-full flex justify-between items-start px-4 pt-4">
                 <div className="flex items-center">
                     <Avatar
-                        icon={<UserOutlined />}
+                        icon={<AiOutlineUser className="mx-auto" />}
                         src={props.avatar}
+                        className="flex items-center"
                         size={35}
                     />
                     <div className="ml-2 text-white text-xl">
                         {props.nickname}
                     </div>
                 </div>
-                <EllipsisOutlined
+                <AiOutlineEllipsis
                     className="ml-2 text-gray-600"
                     style={{ fontSize: '20px' }}
                 />
             </div>
 
             <div className="px-4">
-                <div className="mt-2 rounded-2xl bg-gray-700 text-green-400 text-xs px-2 py-1 inline-block">
-                    <BulbOutlined />
-                    <span className="ml-1">我的2021观影报告</span>
+                <div className="mt-2 rounded-2xl bg-gray-700 text-green-400 text-xs px-2 py-1 inline-flex items-center">
+                    <HiOutlineHashtag />
+                    <span>我的2021观影报告</span>
+                    <HiOutlineHashtag />
                 </div>
                 <div className="mt-2 text-base">
                     年度目标 "观影数量3600" 提前大成! 年度目标 "观影数量3600"
@@ -64,24 +66,24 @@ const Fn = (props) => {
                 <Button
                     type="text"
                     size="large"
-                    icon={<LikeOutlined style={{ fontSize: '18px' }} />}
-                    className="text-gray-600"
+                    icon={<AiOutlineLike style={{ fontSize: '18px' }} />}
+                    className="text-gray-600 flex items-center gap-x-1"
                 >
                     赞
                 </Button>
                 <Button
                     type="text"
                     size="large"
-                    icon={<CommentOutlined style={{ fontSize: '18px' }} />}
-                    className="text-gray-600"
+                    icon={<AiOutlineComment style={{ fontSize: '18px' }} />}
+                    className="text-gray-600 flex items-center gap-x-1"
                 >
                     回复
                 </Button>
                 <Button
                     type="text"
                     size="large"
-                    icon={<RetweetOutlined style={{ fontSize: '18px' }} />}
-                    className="text-gray-600"
+                    icon={<AiOutlineRetweet style={{ fontSize: '18px' }} />}
+                    className="text-gray-600 flex items-center gap-x-1"
                 >
                     转发
                 </Button>

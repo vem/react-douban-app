@@ -1,39 +1,55 @@
 import {
-    HomeFilled,
-    BookOutlined,
-    GroupOutlined,
-    ShopOutlined,
-    UserOutlined,
-} from '@ant-design/icons';
-
-const iconSize = '20px';
+    AiFillHome,
+    AiOutlineHome,
+    AiOutlineShop,
+    AiFillShop,
+} from 'react-icons/ai';
+import { BsBook, BsBookFill } from 'react-icons/bs';
+import { TiGroupOutline, TiGroup } from 'react-icons/ti';
+import { RiUser3Fill, RiUser3Line } from 'react-icons/ri';
+import { TabBar } from 'antd-mobile';
 
 const Fn = () => {
+    const tabs = [
+        {
+            key: 'home',
+            title: '首页',
+            icon: (active) => (active ? <AiFillHome /> : <AiOutlineHome />),
+        },
+        {
+            key: 'bookMovieMusic',
+            title: '书影音',
+            icon: (active) => (active ? <BsBookFill /> : <BsBook />),
+        },
+        {
+            key: 'group',
+            title: '小组',
+            icon: (active) => (active ? <TiGroup /> : <TiGroupOutline />),
+        },
+        {
+            key: 'market',
+            title: '市集',
+            icon: (active) => (active ? <AiFillShop /> : <AiOutlineShop />),
+        },
+        {
+            key: 'personalCenter',
+            title: '我',
+            icon: (active) => (active ? <RiUser3Fill /> : <RiUser3Line />),
+        },
+    ];
+
     return (
         <>
-            <div className="fixed z-20 bottom-0 w-full h-20 bg-gray-800 text-gray-400 flex justify-between items-center px-8 pb-5 text-xs">
-                <div className="flex flex-col items-center">
-                    <HomeFilled style={{ fontSize: iconSize }} />
-                    <div className="mt-1">首页</div>
-                </div>
-                <div className="flex flex-col items-center">
-                    <BookOutlined style={{ fontSize: iconSize }} />
-                    <div className="mt-1">书影音</div>
-                </div>
-                <div className="flex flex-col items-center">
-                    <GroupOutlined style={{ fontSize: iconSize }} />
-                    <div className="mt-1">小组</div>
-                </div>
-                <div className="flex flex-col items-center">
-                    <ShopOutlined style={{ fontSize: iconSize }} />
-                    <div className="mt-1">市集</div>
-                </div>
-                <div className="flex flex-col items-center">
-                    <UserOutlined style={{ fontSize: iconSize }} />
-                    <div className="mt-1">我</div>
-                </div>
-            </div>
-            <div className="h-20"></div>
+            <TabBar className="fixed z-20 bottom-0 w-full h-20 bg-gray-800 text-gray-400 pb-6">
+                {tabs.map((item) => (
+                    <TabBar.Item
+                        key={item.key}
+                        icon={item.icon}
+                        title={item.title}
+                    />
+                ))}
+            </TabBar>
+            <div className="w-full h-20"></div>
         </>
     );
 };
